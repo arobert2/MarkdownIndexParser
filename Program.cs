@@ -30,12 +30,16 @@ namespace MarkdownIndexParser
                 {
                     sb.AppendLine(next);
                     if (next.Length > 1 && next[0].Equals('#'))
+                    {
+                        sb.AppendLine("[top](#index)  ");
                         TableOfContents.Add(new MDHeaders(next));
+                    }
                 }
             }
 
             //Generate a TableOfContents StringBuilder object.
             StringBuilder toc = BuildTableOfContents(TableOfContents);
+            toc.Insert(0, "# Index\n", 1);
             //append original content.
             toc.AppendLine(sb.ToString());
 
@@ -44,6 +48,7 @@ namespace MarkdownIndexParser
 
             using (StreamWriter sw = new StreamWriter(newpath))
             {
+                Console.WriteLine("Output to {0}", newpath);
                 sw.Write(toc.ToString());
             }
         }
