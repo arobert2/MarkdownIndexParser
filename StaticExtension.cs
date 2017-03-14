@@ -30,9 +30,9 @@ namespace MarkdownIndexParser
         /// <returns>multiplied string.</returns>
         public static string Multiply(this string input, int multiply)
         {
-            string newstring = input;
+            string newstring = "";
             for (int i = 0; i < multiply; i++)
-                newstring += newstring;
+                newstring += input;
             return newstring;
         }
     }
