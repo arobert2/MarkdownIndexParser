@@ -53,7 +53,7 @@ namespace MarkdownIndexParser
             StringBuilder sb = new StringBuilder();
             foreach(MDHeaders mdh in lmdh)
             {
-                string tier = "   ".Multiply(mdh.Tier);
+                string tier = "\t".Multiply(mdh.Tier);
                 sb.AppendLine(string.Format("{0}1. [{1}]({2})",tier,mdh.Title,mdh.Anchor));
             }
             sb.AppendLine();
