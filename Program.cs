@@ -39,7 +39,7 @@ namespace MarkdownIndexParser
 
             //Generate a TableOfContents StringBuilder object.
             StringBuilder toc = BuildTableOfContents(TableOfContents);
-            toc.Insert(0, "# Index\n", 1);
+            toc.Insert(0, "# Index  ", 1);
             //append original content.
             toc.AppendLine(sb.ToString());
 
